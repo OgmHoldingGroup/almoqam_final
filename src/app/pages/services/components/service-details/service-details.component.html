@@ -1,0 +1,186 @@
+<app-main-header
+  [pageTitle]="
+    currentLang() === 'ar'
+      ? service()?.title || 'تفاصيل الخدمة'
+      : service()?.titleEn || 'Service Details'
+  "
+  [showPath]="true"
+/>
+
+@if (service()) {
+<div class="service-details-page bg-white text-black py-16 min-h-screen">
+  <div class="container mx-auto px-4">
+    <!-- Back Button -->
+    <button
+      (click)="goBack()"
+      class="mb-8 flex items-center gap-2 text-MaintTxtColors hover:opacity-80 transition"
+    >
+      <i
+        class="fas fa-arrow-right"
+        [class.fa-arrow-left]="currentLang() === 'en'"
+      ></i>
+      <span class="font-semibold">{{
+        currentLang() === "ar" ? "العودة للخدمات" : "Back to Services"
+      }}</span>
+    </button>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- Image Section -->
+      <div class="relative">
+        <div class="sticky top-8">
+          <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+            <img
+              src="imgs/services/{{ service()!.image }}"
+              [alt]="service()!.title"
+              class="w-full h-[500px] object-cover"
+            />
+            <div
+              class="absolute top-4 right-4 bg-gradient-to-b from-[#b7955b] to-[#8c6a2f] text-white font-bold px-6 py-3 rounded-xl shadow-lg text-2xl"
+            >
+              {{ service()!.id | number : "2.0" }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Details Section -->
+      <div class="space-y-8">
+        <!-- Title & Price -->
+        <div>
+          <h1 class="text-4xl font-bold text-gray-900 mb-4 leading-tight">
+            {{ currentLang() === "ar" ? service()!.title : service()!.titleEn }}
+          </h1>
+          <!-- <div class="flex items-center gap-3">
+            <span class="text-3xl font-bold text-MaintTxtColors">
+              {{
+                currentLang() === "ar" ? service()!.price : service()!.priceEn
+              }}
+            </span>
+            <span class="text-gray-500 line-through text-xl">
+              {{
+                currentLang() === "ar"
+                  ? service()!.price.replace("700", "900")
+                  : service()!.priceEn.replace("700", "900")
+              }}
+            </span>
+          </div> -->
+        </div>
+
+        <!-- Description -->
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h2
+            class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2"
+          >
+            <i class="fas fa-info-circle text-MaintTxtColors"></i>
+            {{ currentLang() === "ar" ? "وصف الخدمة" : "Service Description" }}
+          </h2>
+          <p class="text-gray-700 text-lg leading-relaxed">
+            {{
+              currentLang() === "ar"
+                ? service()!.description
+                : service()!.descriptionEn
+            }}
+          </p>
+        </div>
+
+        <!-- Features -->
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl">
+          <h2
+            class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2"
+          >
+            <i class="fas fa-check-circle text-MaintTxtColors"></i>
+            {{ currentLang() === "ar" ? "مميزات الخدمة" : "Service Features" }}
+          </h2>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-star text-[#b7955b] mt-1"></i>
+              <span class="text-gray-700">{{
+                currentLang() === "ar"
+                  ? "استشارات قانونية متخصصة من محامين معتمدين"
+                  : "Specialized legal advice from certified lawyers"
+              }}</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-star text-[#b7955b] mt-1"></i>
+              <span class="text-gray-700">{{
+                currentLang() === "ar"
+                  ? "سرية تامة وحفظ خصوصية المعلومات"
+                  : "Complete confidentiality and privacy protection"
+              }}</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-star text-[#b7955b] mt-1"></i>
+              <span class="text-gray-700">{{
+                currentLang() === "ar"
+                  ? "متابعة مستمرة حتى إنهاء الخدمة"
+                  : "Continuous follow-up until service completion"
+              }}</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-star text-[#b7955b] mt-1"></i>
+              <span class="text-gray-700">{{
+                currentLang() === "ar"
+                  ? "دعم فني على مدار الساعة"
+                  : "24/7 technical support"
+              }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="space-y-4 pt-4">
+          <button
+            (click)="openWhatsApp()"
+            class="w-full bg-gradient-to-r from-[#b7955b] to-[#8c6a2f] text-white px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
+          >
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            {{
+              currentLang() === "ar"
+                ? "احجز استشارتك الآن"
+                : "Book Your Consultation Now"
+            }}
+          </button>
+
+          <button
+            class="w-full border-2 border-[#b7955b] text-[#b7955b] px-8 py-4 rounded-xl font-bold text-lg hover:bg-MaintTxtColors hover:text-white transition flex items-center justify-center gap-3"
+          >
+            <i class="fas fa-phone"></i>
+            {{ currentLang() === "ar" ? "تواصل معنا" : "Contact Us" }}
+          </button>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
+          <div class="text-center">
+            <i class="fas fa-shield-alt text-3xl text-MaintTxtColors mb-2"></i>
+            <p class="text-sm text-gray-600 font-semibold">
+              {{ currentLang() === "ar" ? "موثوق" : "Trusted" }}
+            </p>
+          </div>
+          <div class="text-center">
+            <i class="fas fa-award text-3xl text-MaintTxtColors mb-2"></i>
+            <p class="text-sm text-gray-600 font-semibold">
+              {{ currentLang() === "ar" ? "معتمد" : "Certified" }}
+            </p>
+          </div>
+          <div class="text-center">
+            <i class="fas fa-users text-3xl text-MaintTxtColors mb-2"></i>
+            <p class="text-sm text-gray-600 font-semibold">
+              {{ currentLang() === "ar" ? "+500 عميل" : "500+ Clients" }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+} @else {
+<div class="min-h-screen flex items-center justify-center">
+  <div class="text-center">
+    <i class="fas fa-spinner fa-spin text-5xl text-MaintTxtColors mb-4"></i>
+    <p class="text-xl text-gray-600">
+      {{ currentLang() === "ar" ? "جاري التحميل..." : "Loading..." }}
+    </p>
+  </div>
+</div>
+}

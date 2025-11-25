@@ -1,0 +1,634 @@
+@if (currentTranslation) {
+<app-main-header [pageTitle]="currentTranslation.title" [showPath]="true" />
+
+<div
+  class="LegalSdocumentationServices bg-white text-black"
+  [attr.dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
+>
+  <div class="main-cont">
+    <!-- Sidebar -->
+    <div class="left-section">
+      <!-- Contact Box -->
+      <div class="contact-box">
+        <h2
+          class="section-title"
+          [ngClass]="
+            currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+          "
+        >
+          {{ currentTranslation.contactUs }}
+        </h2>
+        <form class="contact-form">
+          <div class="form-cont">
+            <i class="fa-solid fa-mobile-button"></i>
+            <input
+              type="tel"
+              [placeholder]="currentTranslation.phonePlaceholder"
+              class="form-input"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+              "
+              readonly
+              [value]="phoneNum"
+            />
+          </div>
+
+          <div class="form-cont">
+            <i class="fas fa-fax"></i>
+            <input
+              type="tel"
+              [placeholder]="currentTranslation.phonePlaceholder"
+              class="form-input"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+              "
+              readonly
+              [value]="'0114485984'"
+            />
+          </div>
+
+          <div class="form-cont">
+            <i class="fa-regular fa-envelope-open"></i>
+            <input
+              type="email"
+              [placeholder]="currentTranslation.phonePlaceholder"
+              class="form-input"
+              style="font-family: sans-serif"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+              "
+              readonly
+              value="{{ email }}"
+            />
+          </div>
+
+          <button
+            type="button"
+            (click)="openWhatsApp()"
+            class="submit-btn"
+            [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+          >
+            {{ currentTranslation.btnContact }}
+          </button>
+        </form>
+      </div>
+
+      <!-- Services Box -->
+      <div class="services-box">
+        <h2
+          class="section-title"
+          [ngClass]="
+            currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+          "
+        >
+          {{ currentTranslation.ourServices }}
+        </h2>
+        <div class="services-tabs">
+          @for (service of allServices; track service.id) {
+          <button
+            class="tab-btn"
+            [class.active]="service.id === currentService()?.id"
+            (click)="navigateToService(service.slug)"
+            [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+          >
+            {{ currentLang() === "ar" ? service.ar.title : service.en.title }}
+          </button>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="right-section">
+      <!-- Intro -->
+      <div class="intro-text">
+        <p
+          [ngClass]="currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'"
+        >
+          {{ currentTranslation.introText }}
+        </p>
+      </div>
+      <!-- بعد intro-text أضف: -->
+
+      @if (currentTranslation.introHeading) {
+      <div class="intro-benefits">
+        <h3
+          class="intro-benefits-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+          "
+        >
+          {{ currentTranslation.introHeading }}
+        </h3>
+        <div class="intro-benefits-list">
+          @for (point of currentTranslation.introPoints; track $index) {
+          <div class="intro-benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+              "
+            >
+              {{ point }}
+            </span>
+          </div>
+          }
+        </div>
+      </div>
+      } @if (currentTranslation.guideIntro) {
+      <div class="guide-intro-box">
+        <p
+          [ngClass]="currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'"
+        >
+          {{ currentTranslation.guideIntro }}
+        </p>
+      </div>
+      }
+      <!-- Main Section -->
+      <div class="content-section">
+        <h2
+          class="main-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+          "
+        >
+          {{ currentTranslation.mainHeading }}
+        </h2>
+        <p
+          class="sub-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+          "
+        >
+          {{ currentTranslation.subHeading }}
+        </p>
+
+        <div class="services-list">
+          @for (service of currentTranslation.services; track $index) {
+          <div class="service-item">
+            <i class="fas fa-check-circle"></i>
+            <div
+              class="service-content"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+              "
+            >
+              <strong
+                [ngClass]="
+                  currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+                "
+              >
+                {{ service.title }}:
+              </strong>
+              {{ service.description }}
+            </div>
+          </div>
+          }
+        </div>
+
+        <div class="cta-wrapper">
+          <button
+            (click)="openWhatsApp()"
+            class="cta-btn"
+            [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+          >
+            {{ currentTranslation.btnContact }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Additional Sections -->
+      @for (section of currentTranslation.additionalSections; track $index) {
+      <div class="content-section">
+        <h2
+          class="main-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+          "
+        >
+          {{ section.heading }}
+        </h2>
+
+        @if (section.subHeading) {
+        <p
+          class="sub-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+          "
+        >
+          {{ section.subHeading }}
+        </p>
+        }
+
+        <!-- For Difference Section (points) -->
+        @if (section.points) {
+        <div class="difference-content">
+          @for (point of section.points; track $index) {
+          <div class="point-block">
+            <h3
+              class="point-title"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+              "
+            >
+              {{ point.title }}
+            </h3>
+            <div class="reasons-list">
+              @for (item of point.items; track $index) {
+              <div class="reason-item">
+                <i class="fas fa-check-circle"></i>
+                <span
+                  [ngClass]="
+                    currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+                  "
+                >
+                  {{ item }}
+                </span>
+              </div>
+              }
+            </div>
+          </div>
+          }
+        </div>
+
+        @if (section.conclusion) {
+        <div class="conclusion-box">
+          <p
+            [ngClass]="
+              currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+            "
+          >
+            {{ currentLang() === "ar" ? "الخلاصة:" : "Conclusion:" }}
+          </p>
+          <p
+            [ngClass]="
+              currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+            "
+          >
+            {{ section.conclusion }}
+          </p>
+        </div>
+        } }
+
+        <!-- For Specializations Section -->
+        @if (section.specializations) {
+        <div class="specializations-grid">
+          @for (spec of section.specializations; track $index) {
+          <div class="specialization-card">
+            <h3
+              class="spec-title"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+              "
+            >
+              {{ spec.title }}
+            </h3>
+            @if (spec.description) {
+            <p
+              class="spec-description"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+              "
+            >
+              {{ spec.description }}
+            </p>
+            }
+            <div class="spec-items">
+              @for (item of spec.items; track $index) {
+              <div class="spec-item">
+                <i class="fas fa-check-circle"></i>
+                <span
+                  [ngClass]="
+                    currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+                  "
+                >
+                  {{ item }}
+                </span>
+              </div>
+              }
+            </div>
+          </div>
+          }
+        </div>
+        }
+
+        <!-- For Benefits Section -->
+        @if (section.benefits) { @if (section.description) {
+        <p
+          class="section-description"
+          [ngClass]="
+            currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+          "
+        >
+          {{ section.description }}
+        </p>
+        }
+        <div class="reasons-list">
+          @for (benefit of section.benefits; track $index) {
+          <div class="reason-item">
+            <i class="fas fa-check-circle"></i>
+            <span
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+              "
+            >
+              {{ benefit }}
+            </span>
+          </div>
+          }
+        </div>
+        }
+
+        <!-- For Tasks Section -->
+        @if (section.tasks) {
+        <div class="tasks-content">
+          @for (task of section.tasks; track $index) {
+          <div class="task-block">
+            <h3
+              class="task-title"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+              "
+            >
+              {{ task.title }}
+            </h3>
+            <div class="task-items">
+              @for (item of task.items; track $index) {
+              <div class="task-item">
+                <i class="fas fa-check-circle"></i>
+                <span
+                  [ngClass]="
+                    currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+                  "
+                >
+                  {{ item }}
+                </span>
+              </div>
+              }
+            </div>
+          </div>
+          }
+        </div>
+
+        @if (section.conclusion) {
+        <div class="conclusion-text">
+          <p
+            [ngClass]="
+              currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+            "
+          >
+            {{ section.conclusion }}
+          </p>
+        </div>
+        } }
+
+        <div class="cta-wrapper">
+          <button
+            (click)="openWhatsApp()"
+            class="cta-btn"
+            [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+          >
+            {{ currentTranslation.btnContact }}
+          </button>
+        </div>
+      </div>
+      }
+
+      <!-- Why Us Section -->
+      <div class="content-section">
+        <h2
+          class="main-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+          "
+        >
+          {{ currentTranslation.whyUsTitle }}
+        </h2>
+
+        @if (currentTranslation.whyUsIntro) {
+        <p
+          class="sub-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+          "
+        >
+          {{ currentTranslation.whyUsIntro }}
+        </p>
+        }
+
+        <div class="why-us-grid">
+          @for (point of currentTranslation.whyUsPoints; track $index) {
+          <div class="why-us-card">
+            <i class="fas fa-star"></i>
+            <h3
+              class="why-us-title"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+              "
+            >
+              {{ point.title }}
+            </h3>
+            <p
+              class="why-us-desc"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+              "
+            >
+              {{ point.description }}
+            </p>
+          </div>
+          }
+        </div>
+
+        <div class="cta-wrapper">
+          <button
+            (click)="openWhatsApp()"
+            class="cta-btn"
+            [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+          >
+            {{ currentTranslation.btnContact }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Expert Info Section -->
+      @if (currentTranslation.expertInfo) {
+      <div class="content-section expert-section">
+        <h2
+          class="main-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+          "
+        >
+          {{ currentTranslation.expertInfo.heading }}
+        </h2>
+
+        <p
+          class="expert-content"
+          [ngClass]="currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'"
+        >
+          {{ currentTranslation.expertInfo.content }}
+        </p>
+
+        @if (currentTranslation.expertInfo.features &&
+        currentTranslation.expertInfo.features.length > 0) {
+        <div class="expert-features">
+          @for (feature of currentTranslation.expertInfo.features; track $index)
+          {
+          <div class="feature-item">
+            <i class="fas fa-award"></i>
+            <span
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+              "
+            >
+              {{ feature }}
+            </span>
+          </div>
+          }
+        </div>
+        }
+
+        <div class="cta-wrapper">
+          <button
+            (click)="openWhatsApp()"
+            class="cta-btn"
+            [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+          >
+            {{ currentTranslation.btnContact }}
+          </button>
+        </div>
+      </div>
+      }
+
+      <!-- FAQ Section -->
+      @if (currentTranslation.faqItems && currentTranslation.faqItems.length >
+      0) {
+      <div class="content-section faq-section">
+        <h2
+          class="main-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+          "
+        >
+          {{ currentTranslation.finalCtaTitle }}
+        </h2>
+
+        @if (currentTranslation.finalCtaDesc) {
+        <p
+          class="sub-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+          "
+        >
+          {{ currentTranslation.finalCtaDesc }}
+        </p>
+        }
+
+        <div class="faq-list">
+          @for (faq of currentTranslation.faqItems; track $index) {
+          <div class="faq-item">
+            <div class="faq-question">
+              <i class="fas fa-question-circle"></i>
+              <h3
+                [ngClass]="
+                  currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+                "
+              >
+                {{ faq.question }}
+              </h3>
+            </div>
+            <div class="faq-answer">
+              <p
+                [ngClass]="
+                  currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+                "
+              >
+                {{ faq.answer }}
+              </p>
+            </div>
+          </div>
+          }
+        </div>
+
+        <div class="cta-wrapper">
+          <button
+            (click)="openWhatsApp()"
+            class="cta-btn"
+            [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+          >
+            {{ currentTranslation.btnContact }}
+          </button>
+        </div>
+      </div>
+      }
+
+      <!-- Final CTA -->
+      @if (!currentTranslation.faqItems || currentTranslation.faqItems.length
+      === 0) {
+      <div class="content-section final-cta">
+        <h2
+          class="main-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+          "
+        >
+          {{ currentTranslation.finalCtaTitle }}
+        </h2>
+        <p
+          class="cta-description"
+          [ngClass]="currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'"
+        >
+          {{ currentTranslation.finalCtaDesc }}
+        </p>
+        <div class="cta-wrapper">
+          <button
+            (click)="openWhatsApp()"
+            class="cta-btn-large"
+            [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+          >
+            {{ currentTranslation.btnContact }}
+          </button>
+        </div>
+      </div>
+      } @else {
+      <div class="content-section final-cta">
+        <h2
+          class="main-heading"
+          [ngClass]="
+            currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+          "
+        >
+          {{ currentLang() === "ar" ? "تواصل معنا الآن" : "Contact Us Now" }}
+        </h2>
+        <p
+          class="cta-description"
+          [ngClass]="currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'"
+        >
+          {{
+            currentLang() === "ar"
+              ? "فريق الشركة جاهز لفحص قضيتك وتقديم استشارة دقيقة باحترافية وسرعة."
+              : "Our team is ready to review your case and provide accurate consultation professionally and quickly."
+          }}
+        </p>
+        <div class="cta-wrapper">
+          <button
+            (click)="openWhatsApp()"
+            class="cta-btn-large"
+            [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+          >
+            {{ currentTranslation.btnContact }}
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+} @else {
+<div class="loading-container">
+  <p [ngClass]="currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'">
+    {{ currentLang() === "ar" ? "جاري التحميل..." : "Loading..." }}
+  </p>
+</div>
+}

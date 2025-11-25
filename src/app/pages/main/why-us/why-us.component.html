@@ -1,0 +1,52 @@
+<section class="who-us-section">
+  <div class="section-overlay"></div>
+  <div class="main-cont">
+    <div class="content-wrapper">
+      <div class="text-content">
+        <h2 class="section-title">{{ getText(content.whoUs.title) }}</h2>
+        <div class="title-divider"></div>
+        <p class="section-description">
+          {{ getText(content.whoUs.description) }}
+        </p>
+      </div>
+      <div class="image-content">
+        <img [src]="content.whoUs.image" [alt]="getText(content.whoUs.title)" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- لماذا نحن Section -->
+<section class="why-us-section">
+  <div class="section-overlay"></div>
+  <div class="main-cont">
+    <div class="why-us-content">
+      <h2 class="section-title">{{ getText(content.whyUs.title) }}</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">
+        {{ getText(content.whyUs.description) }}
+      </p>
+
+      <div class="features-grid">
+        <div
+          class="feature-card"
+          *ngFor="let feature of content.whyUs.features"
+        >
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <p class="feature-text">{{ getText(feature) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

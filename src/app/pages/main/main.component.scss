@@ -1,0 +1,1472 @@
+// ==========================================
+// Main Page Styles
+// ==========================================
+
+.main-page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-carousel {
+  width: 100%;
+  .p-carousel-content {
+    padding: 0;
+  }
+
+  .slide {
+    width: 100%;
+    height: 85vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background: transparent;
+    color: #fff;
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    padding-left: 10%;
+    max-width: 600px;
+
+    h2 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-weight: 400;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-btn {
+      background-color: #d4af37; // ذهبي
+      color: #000;
+      border: none;
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      transition: 0.3s ease;
+
+      &:hover {
+        background-color: #c19e32;
+      }
+    }
+  }
+}
+:host ::ng-deep .p-carousel-indicators {
+  display: none !important;
+}
+// ==========================================
+// 3. Why Us Section
+// ==========================================
+
+// ==========================================
+// 4. CTA Banner Small
+// ==========================================
+// .cta-banner-small {
+//   position: relative;
+//   min-height: 400px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background: url("../../../../public/imgs/have-prop.webp") center center;
+//   background-size: cover;
+//   overflow: hidden;
+
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: rgba(224, 238, 236, 0.7);
+//     z-index: 1;
+//   }
+
+//   .cta-content {
+//     position: relative;
+//     z-index: 2;
+//     text-align: center;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 25px;
+//     padding: 40px 20px;
+
+//     .cta-title {
+//       font-size: 48px;
+//       font-weight: bold;
+//       color: #0f201f;
+//       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+//     }
+
+//     .cta-button {
+//       background: #edb970;
+//       color: #fff;
+//       padding: 18px 35px;
+//       border-radius: 12px;
+//       border: 2px solid transparent;
+//       font-size: 22px;
+//       font-weight: 600;
+//       cursor: pointer;
+//       transition: all 0.3s ease;
+//       display: inline-flex;
+//       align-items: center;
+//       gap: 12px;
+
+//       i {
+//         font-size: 26px;
+//       }
+
+//       &:hover {
+//         background: #0f201f;
+//         color: #fff;
+//         border-color: #edb970;
+//         transform: translateY(-3px);
+//         box-shadow: 0 6px 25px rgba(237, 185, 112, 0.4);
+//       }
+//     }
+//   }
+// }
+
+// ==========================================
+// 5. Testimonials Section
+// ==========================================
+.testimonials-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #0f201f 0%, #10443e 100%);
+  position: relative;
+  overflow: hidden;
+
+  .section-title {
+    text-align: center;
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 60px;
+    font-weight: bold;
+  }
+
+  .testimonials-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .slider-container {
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .testimonial-slide {
+    min-width: 100%;
+    padding: 0 20px;
+  }
+
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 60px 50px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .client-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #edb970;
+    box-shadow: 0 4px 20px rgba(237, 185, 112, 0.4);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .client-name {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .client-location {
+    font-size: 18px;
+    color: #edb970;
+    margin-bottom: 20px;
+  }
+
+  .rating {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+
+    i {
+      color: #ffd700;
+      font-size: 24px;
+    }
+  }
+
+  .testimonial-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #edb970;
+    background: rgba(237, 185, 112, 0.1);
+    color: #edb970;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    z-index: 10;
+
+    &:hover {
+      background: #edb970;
+      color: #fff;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &.prev-btn {
+      left: 10px;
+    }
+
+    &.next-btn {
+      right: 10px;
+    }
+  }
+
+  .custom-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 50px;
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+
+      &:hover {
+        background: rgba(237, 185, 112, 0.6);
+        transform: scale(1.3);
+      }
+
+      &.active {
+        background: #edb970;
+        width: 35px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(237, 185, 112, 0.5);
+      }
+    }
+  }
+}
+
+// ==========================================
+// 6. Blog Section
+// ==========================================
+.blog-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+
+    .subtitle {
+      font-size: 24px;
+      color: #edb970;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .main-title {
+      font-size: 42px;
+      color: #0f201f;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .title-divider {
+      width: 80px;
+      height: 3px;
+      background: #edb970;
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .blog-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .blog-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .blog-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: #e0e0e0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 32, 31, 0) 0%,
+        rgba(15, 32, 31, 0.7) 100%
+      );
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+
+      .image-overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .blog-content {
+    padding: 30px 25px;
+  }
+
+  .blog-title {
+    font-size: 20px;
+    color: #0f201f;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 80px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.3s ease;
+  }
+
+  .blog-card:hover .blog-title {
+    color: #edb970;
+  }
+
+  .blog-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #edb970;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      gap: 12px;
+
+      i {
+        transform: translateX(-5px);
+      }
+    }
+  }
+
+  .view-all-container {
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    background: #edb970;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(237, 185, 112, 0.3);
+
+    i {
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: #0f201f;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(237, 185, 112, 0.4);
+
+      i {
+        transform: translateX(-5px);
+      }
+    }
+  }
+}
+
+// ==========================================
+
+// ==========================================
+// 8. Contact Banner
+// ==========================================
+.contact-banner {
+  background: linear-gradient(135deg, #0f201f 0%, #10443e 100%);
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle,
+      rgba(237, 185, 112, 0.08) 0%,
+      transparent 70%
+    );
+    border-radius: 50%;
+  }
+
+  .main-cont {
+    position: relative;
+    z-index: 2;
+  }
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .banner-titles {
+    text-align: center;
+
+    .main-title {
+      font-size: 42px;
+      color: #edb970;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .sub-title {
+      font-size: 36px;
+      color: #fff;
+      font-weight: bold;
+      margin: 0;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .contact-info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(237, 185, 112, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #edb970;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(237, 185, 112, 0.2);
+    }
+
+    i {
+      font-size: 28px;
+      color: #edb970;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover i {
+      transform: scale(1.1);
+    }
+
+    .info-text {
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      white-space: nowrap;
+
+      &:hover {
+        color: #edb970;
+      }
+    }
+  }
+}
+
+// ==========================================
+// 9. CTA Banner Large
+// ==========================================
+.cta-banner-large {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../../../public/imgs/main-header.webp") center center;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 32, 31, 0.85);
+    z-index: 1;
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 20px;
+  }
+
+  .banner-title {
+    font-size: 48px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 40px;
+    background: #edb970;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(237, 185, 112, 0.4);
+
+    i {
+      font-size: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: #d9a55f;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(237, 185, 112, 0.6);
+
+      i {
+        transform: scale(1.2) rotate(15deg);
+      }
+    }
+  }
+}
+
+// ==========================================
+// Animations
+// ==========================================
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ==========================================
+// Responsive Design
+// ==========================================
+
+// Large Screens (1200px and below)
+@media (max-width: 1200px) {
+  .landing-section {
+    .main-title {
+      font-size: 42px;
+    }
+
+    .sub-title {
+      font-size: 38px;
+    }
+
+    .certificates-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+
+  .services-section {
+    .section-header .main-title {
+      font-size: 38px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      padding: 50px 30px;
+    }
+  }
+
+  .about-section {
+    .about-content {
+      gap: 60px;
+    }
+
+    .about-text .main-title {
+      font-size: 38px;
+    }
+  }
+
+  .contact-banner {
+    .contact-info-grid {
+      gap: 40px;
+    }
+  }
+}
+
+// Tablets (992px and below)
+@media (max-width: 992px) {
+  .landing-section {
+    min-height: auto;
+    padding: 80px 0;
+
+    .main-title {
+      font-size: 36px;
+    }
+
+    .sub-title {
+      font-size: 32px;
+    }
+
+    .certificates-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+  }
+
+  .services-section {
+    padding: 80px 0;
+
+    .section-header {
+      margin-bottom: 60px;
+
+      .main-title {
+        font-size: 36px;
+      }
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .why-us-section {
+    padding: 80px 20px;
+    background-attachment: scroll;
+
+    .why-us-content {
+      .section-title {
+        font-size: 36px;
+      }
+
+      .section-description {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .cta-banner-small {
+    min-height: 350px;
+
+    .cta-content {
+      .cta-title {
+        font-size: 40px;
+      }
+
+      .cta-button {
+        font-size: 20px;
+        padding: 16px 32px;
+      }
+    }
+  }
+
+  .testimonials-section {
+    padding: 80px 0;
+
+    .section-title {
+      font-size: 40px;
+    }
+
+    .testimonials-wrapper {
+      padding: 0 70px;
+    }
+  }
+
+  .blog-section {
+    padding: 80px 0;
+
+    .section-header {
+      margin-bottom: 60px;
+
+      .main-title {
+        font-size: 36px;
+      }
+    }
+
+    .blog-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 35px;
+    }
+  }
+
+  .about-section {
+    padding: 80px 0;
+
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .about-image {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .about-text {
+      text-align: center;
+
+      .title-divider {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .signature-section {
+        align-items: center;
+      }
+    }
+  }
+
+  .contact-banner {
+    .banner-titles {
+      .main-title {
+        font-size: 36px;
+      }
+
+      .sub-title {
+        font-size: 30px;
+      }
+    }
+
+    .contact-info-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      max-width: 600px;
+    }
+  }
+
+  .cta-banner-large {
+    min-height: 350px;
+    background-attachment: scroll;
+
+    .banner-title {
+      font-size: 40px;
+    }
+
+    .cta-button {
+      font-size: 18px;
+      padding: 16px 35px;
+    }
+  }
+}
+
+// Mobile (768px and below)
+@media (max-width: 768px) {
+  .landing-section {
+    padding: 60px 0;
+
+    .main-title {
+      font-size: 30px;
+    }
+
+    .sub-title {
+      font-size: 26px;
+      padding: 0 15px;
+    }
+
+    .cta-button {
+      font-size: 18px;
+      padding: 15px 30px;
+    }
+
+    .certificates-section {
+      margin-top: 50px;
+    }
+
+    .certificates-title {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .certificates-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .certificate-item {
+      padding: 20px;
+    }
+  }
+
+  .services-section {
+    padding: 60px 0;
+
+    .section-header {
+      margin-bottom: 50px;
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .main-title {
+        font-size: 30px;
+      }
+    }
+
+    .services-grid {
+      padding: 40px 20px;
+    }
+
+    .service-card {
+      padding: 25px;
+
+      .service-title {
+        font-size: 20px;
+      }
+
+      .service-description {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .why-us-section {
+    padding: 60px 15px;
+    min-height: auto;
+
+    .why-us-content {
+      .section-title {
+        font-size: 30px;
+      }
+
+      .section-description {
+        font-size: 16px;
+        line-height: 1.8;
+        text-align: right;
+      }
+    }
+  }
+
+  .cta-banner-small {
+    min-height: 300px;
+
+    .cta-content {
+      gap: 20px;
+
+      .cta-title {
+        font-size: 32px;
+        padding: 0 15px;
+      }
+
+      .cta-button {
+        font-size: 18px;
+        padding: 14px 28px;
+      }
+    }
+  }
+
+  .testimonials-section {
+    padding: 60px 0;
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 50px;
+    }
+
+    .testimonials-wrapper {
+      padding: 0 60px;
+    }
+
+    .testimonial-card {
+      padding: 40px 30px;
+    }
+
+    .client-image {
+      width: 80px;
+      height: 80px;
+    }
+
+    .client-name {
+      font-size: 24px;
+    }
+
+    .client-location {
+      font-size: 16px;
+    }
+
+    .rating i {
+      font-size: 20px;
+    }
+
+    .testimonial-text {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .nav-btn {
+      width: 45px;
+      height: 45px;
+      font-size: 18px;
+    }
+  }
+
+  .blog-section {
+    padding: 60px 0;
+
+    .section-header {
+      margin-bottom: 50px;
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .main-title {
+        font-size: 30px;
+      }
+    }
+
+    .blog-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .blog-image {
+      height: 250px;
+    }
+
+    .blog-title {
+      font-size: 18px;
+      min-height: auto;
+    }
+  }
+
+  .about-section {
+    padding: 60px 0;
+
+    .about-text {
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .main-title {
+        font-size: 30px;
+      }
+
+      .title-divider {
+        width: 60px;
+        height: 3px;
+      }
+
+      .description p {
+        font-size: 15px;
+        line-height: 1.8;
+        text-align: right;
+      }
+
+      .signature-section {
+        .signature {
+          width: 150px;
+        }
+
+        .ceo-name {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .contact-banner {
+    padding: 50px 0;
+
+    .banner-titles {
+      .main-title {
+        font-size: 30px;
+      }
+
+      .sub-title {
+        font-size: 26px;
+      }
+    }
+
+    .contact-info-item {
+      flex-direction: column;
+      text-align: center;
+      padding: 25px 20px;
+
+      i {
+        font-size: 32px;
+      }
+
+      .info-text {
+        font-size: 16px;
+        white-space: normal;
+      }
+    }
+  }
+
+  .cta-banner-large {
+    min-height: 300px;
+
+    .banner-content {
+      gap: 25px;
+      padding: 50px 20px;
+    }
+
+    .banner-title {
+      font-size: 32px;
+      line-height: 1.4;
+    }
+
+    .cta-button {
+      font-size: 17px;
+      padding: 14px 30px;
+    }
+  }
+}
+
+// Small Mobile (480px and below)
+@media (max-width: 480px) {
+  .landing-section {
+    padding: 50px 0;
+
+    .main-title {
+      font-size: 26px;
+    }
+
+    .sub-title {
+      font-size: 22px;
+    }
+
+    .cta-button {
+      font-size: 16px;
+      padding: 12px 25px;
+    }
+
+    .certificates-title {
+      font-size: 18px;
+    }
+  }
+
+  .services-section {
+    padding: 50px 0;
+
+    .section-header {
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .main-title {
+        font-size: 26px;
+      }
+
+      .title-divider {
+        width: 60px;
+      }
+    }
+  }
+
+  .why-us-section {
+    padding: 50px 15px;
+
+    .why-us-content {
+      .section-title {
+        font-size: 26px;
+      }
+
+      .title-divider {
+        width: 50px;
+      }
+
+      .section-description {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .cta-banner-small {
+    min-height: 280px;
+
+    .cta-content {
+      .cta-title {
+        font-size: 26px;
+      }
+
+      .cta-button {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+    }
+  }
+
+  .testimonials-section {
+    padding: 50px 0;
+
+    .section-title {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .testimonials-wrapper {
+      padding: 0 50px;
+    }
+
+    .testimonial-card {
+      padding: 30px 20px;
+    }
+
+    .client-image {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .client-name {
+      font-size: 20px;
+    }
+
+    .client-location {
+      font-size: 14px;
+    }
+
+    .rating {
+      gap: 5px;
+      margin-bottom: 20px;
+
+      i {
+        font-size: 18px;
+      }
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+
+      &.prev-btn {
+        left: 5px;
+      }
+
+      &.next-btn {
+        right: 5px;
+      }
+    }
+
+    .custom-pagination {
+      margin-top: 35px;
+      gap: 10px;
+
+      .dot {
+        width: 10px;
+        height: 10px;
+
+        &.active {
+          width: 28px;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+
+  .blog-section {
+    padding: 50px 0;
+
+    .section-header {
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .main-title {
+        font-size: 26px;
+      }
+    }
+
+    .blog-image {
+      height: 220px;
+    }
+
+    .blog-content {
+      padding: 25px 20px;
+    }
+
+    .blog-title {
+      font-size: 17px;
+      margin-bottom: 15px;
+    }
+
+    .read-more {
+      font-size: 14px;
+    }
+
+    .view-all-btn {
+      padding: 14px 30px;
+      font-size: 16px;
+    }
+  }
+
+  .about-section {
+    padding: 50px 0;
+
+    .about-text {
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .main-title {
+        font-size: 26px;
+      }
+
+      .title-divider {
+        width: 50px;
+        margin-bottom: 25px;
+      }
+
+      .description {
+        margin-bottom: 30px;
+
+        p {
+          font-size: 14px;
+          line-height: 1.7;
+          margin-bottom: 15px;
+        }
+      }
+
+      .signature-section {
+        padding-top: 20px;
+
+        .signature {
+          width: 130px;
+        }
+
+        .ceo-name {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .contact-banner {
+    padding: 40px 0;
+
+    .banner-titles {
+      .main-title {
+        font-size: 26px;
+      }
+
+      .sub-title {
+        font-size: 22px;
+      }
+    }
+
+    .contact-info-item {
+      padding: 20px 15px;
+
+      i {
+        font-size: 28px;
+      }
+
+      .info-text {
+        font-size: 14px;
+        word-break: break-all;
+      }
+    }
+  }
+
+  .cta-banner-large {
+    min-height: 280px;
+
+    .banner-content {
+      padding: 40px 15px;
+    }
+
+    .banner-title {
+      font-size: 26px;
+    }
+
+    .cta-button {
+      font-size: 16px;
+      padding: 12px 25px;
+    }
+  }
+}
+
+// RTL Support
+[dir="rtl"] {
+  .service-link i,
+  .read-more i,
+  .view-all-btn i {
+    transform: scaleX(-1);
+  }
+
+  .service-card:hover .service-link i {
+    transform: scaleX(-1) translateX(5px);
+  }
+
+  .blog-card:hover .read-more i {
+    transform: scaleX(-1) translateX(5px);
+  }
+
+  .view-all-btn:hover i {
+    transform: scaleX(-1) translateX(5px);
+  }
+}

@@ -1,0 +1,66 @@
+<div class="main-header">
+  <div class="main-cont">
+    <div class="consultation-banner">
+      <h1
+        class="banner-title"
+        [ngClass]="
+          currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+        "
+      >
+        {{ "HOME.TITLE" | translate }}
+      </h1>
+      <!-- <button
+        [ngClass]="currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'"
+        class="consultation-btn"
+        (click)="openWhatsApp()"
+      >
+        {{ "HOME.BUTTON" | translate }}
+        <i class="fa-brands fa-whatsapp"></i>
+      </button> -->
+    </div>
+
+    @if (showPath()) {
+    <div class="breadcrumb-section">
+      <div class="breadcrumb-overlay"></div>
+
+      <div class="breadcrumb-content">
+        <h2
+          class="page-title"
+          [ngClass]="
+            currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+          "
+        >
+          {{ pageTitle() | translate }}
+        </h2>
+
+        <nav class="breadcrumb-path" aria-label="Breadcrumb">
+          <span
+            class="path-item"
+            routerLink="/"
+            [ngClass]="
+              currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+            "
+            >{{ "HEADER.HOME" | translate }}</span
+          >
+          <!-- <i
+            class="fa-solid fa-chevron-left path-separator"
+            [class.rotate-arrow]="currentLang() === 'en'"
+          ></i>
+          <span class="path-item">{{ "HEADER.OURSRV" | translate }}</span> -->
+          <i
+            class="fa-solid fa-chevron-left path-separator"
+            [class.rotate-arrow]="currentLang() === 'en'"
+          ></i>
+          <span
+            class="path-item current"
+            [ngClass]="
+              currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'
+            "
+            >{{ pageTitle() | translate }}</span
+          >
+        </nav>
+      </div>
+    </div>
+    }
+  </div>
+</div>

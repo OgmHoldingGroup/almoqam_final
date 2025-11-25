@@ -1,0 +1,476 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// body {
+//   background: url("../public/imgs/male-lawyer.webp");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }
+body {
+  background: url("../public/imgs/male-lawyer.webp") center center no-repeat;
+  background-size: cover; /* تغطي الشاشة بالكامل */
+  background-attachment: fixed; /* ثابتة أثناء السكرول (اختياري لو تحب التأثير البارالكس) */
+  background-color: #000; /* لون احتياطي لو الصورة ما اتحملتش */
+  margin: 0;
+  padding: 0;
+}
+
+.main-cont {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #10443e;
+  opacity: 0.85;
+  z-index: 1;
+}
+// ####################################
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ==========================================
+// Responsive Design
+// ==========================================
+
+// Large Screens (1200px and below)
+@media (max-width: 1200px) {
+  .landing-section {
+    .main-title {
+      font-size: 42px;
+    }
+
+    .sub-title {
+      font-size: 38px;
+    }
+
+    .certificates-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+
+  .services-section {
+    .section-header .main-title {
+      font-size: 38px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      padding: 50px 30px;
+    }
+  }
+}
+
+// Tablets (992px and below)
+@media (max-width: 992px) {
+  .landing-section {
+    min-height: auto;
+    padding: 80px 0;
+
+    .main-title {
+      font-size: 36px;
+    }
+
+    .sub-title {
+      font-size: 32px;
+    }
+
+    .certificates-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+  }
+
+  .services-section {
+    padding: 80px 0;
+
+    .section-header {
+      margin-bottom: 60px;
+
+      .main-title {
+        font-size: 36px;
+      }
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .why-us-section {
+    padding: 80px 20px;
+    background-attachment: scroll;
+
+    .why-us-content {
+      .section-title {
+        font-size: 36px;
+      }
+
+      .section-description {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .cta-banner-small {
+    min-height: 350px;
+
+    .cta-content {
+      .cta-title {
+        font-size: 40px;
+      }
+
+      .cta-button {
+        font-size: 20px;
+        padding: 16px 32px;
+      }
+    }
+  }
+
+  .cta-banner-large {
+    min-height: 350px;
+    background-attachment: scroll;
+
+    .banner-title {
+      font-size: 40px;
+    }
+
+    .cta-button {
+      font-size: 18px;
+      padding: 16px 35px;
+    }
+  }
+}
+
+// Mobile (768px and below)
+@media (max-width: 768px) {
+  .landing-section {
+    padding: 60px 0;
+
+    .main-title {
+      font-size: 30px;
+    }
+
+    .sub-title {
+      font-size: 26px;
+      padding: 0 15px;
+    }
+
+    .cta-button {
+      font-size: 18px;
+      padding: 15px 30px;
+    }
+
+    .certificates-section {
+      margin-top: 50px;
+    }
+
+    .certificates-title {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .certificates-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .certificate-item {
+      padding: 20px;
+    }
+  }
+
+  .services-section {
+    padding: 60px 0;
+
+    .section-header {
+      margin-bottom: 50px;
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .main-title {
+        font-size: 30px;
+      }
+    }
+
+    .services-grid {
+      padding: 40px 20px;
+    }
+
+    .service-card {
+      padding: 25px;
+
+      .service-title {
+        font-size: 20px;
+      }
+
+      .service-description {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .why-us-section {
+    padding: 60px 15px;
+    min-height: auto;
+
+    .why-us-content {
+      .section-title {
+        font-size: 30px;
+      }
+
+      .section-description {
+        font-size: 16px;
+        line-height: 1.8;
+        text-align: right;
+      }
+    }
+  }
+
+  .cta-banner-small {
+    min-height: 300px;
+
+    .cta-content {
+      gap: 20px;
+
+      .cta-title {
+        font-size: 32px;
+        padding: 0 15px;
+      }
+
+      .cta-button {
+        font-size: 18px;
+        padding: 14px 28px;
+      }
+    }
+  }
+
+  .cta-banner-large {
+    min-height: 300px;
+
+    .banner-content {
+      gap: 25px;
+      padding: 50px 20px;
+    }
+
+    .banner-title {
+      font-size: 32px;
+      line-height: 1.4;
+    }
+
+    .cta-button {
+      font-size: 17px;
+      padding: 14px 30px;
+    }
+  }
+}
+
+// Small Mobile (480px and below)
+@media (max-width: 480px) {
+  .landing-section {
+    padding: 50px 0;
+
+    .main-title {
+      font-size: 26px;
+    }
+
+    .sub-title {
+      font-size: 22px;
+    }
+
+    .cta-button {
+      font-size: 16px;
+      padding: 12px 25px;
+    }
+
+    .certificates-title {
+      font-size: 18px;
+    }
+  }
+
+  .why-us-section {
+    padding: 50px 15px;
+
+    .why-us-content {
+      .section-title {
+        font-size: 26px;
+      }
+
+      .title-divider {
+        width: 50px;
+      }
+
+      .section-description {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .cta-banner-small {
+    min-height: 280px;
+
+    .cta-content {
+      .cta-title {
+        font-size: 26px;
+      }
+
+      .cta-button {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+    }
+  }
+
+  .about-section {
+    padding: 50px 0;
+
+    .about-text {
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .main-title {
+        font-size: 26px;
+      }
+
+      .title-divider {
+        width: 50px;
+        margin-bottom: 25px;
+      }
+
+      .description {
+        margin-bottom: 30px;
+
+        p {
+          font-size: 14px;
+          line-height: 1.7;
+          margin-bottom: 15px;
+        }
+      }
+
+      .signature-section {
+        padding-top: 20px;
+
+        .signature {
+          width: 130px;
+        }
+
+        .ceo-name {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .cta-banner-large {
+    min-height: 280px;
+
+    .banner-content {
+      padding: 40px 15px;
+    }
+
+    .banner-title {
+      font-size: 26px;
+    }
+
+    .cta-button {
+      font-size: 16px;
+      padding: 12px 25px;
+    }
+  }
+}
+
+// RTL Support
+[dir="rtl"] {
+  .service-link i,
+  .read-more i,
+  .view-all-btn i {
+    transform: scaleX(-1);
+  }
+
+  .service-card:hover .service-link i {
+    transform: scaleX(-1) translateX(5px);
+  }
+
+  .blog-card:hover .read-more i {
+    transform: scaleX(-1) translateX(5px);
+  }
+
+  .view-all-btn:hover i {
+    transform: scaleX(-1) translateX(5px);
+  }
+}
+
+// ###################################################
+// العناوين الرئيسية (Main Headings)
+.tajawalExtraBold {
+  font-family: "Tajawal", sans-serif;
+  font-weight: 800;
+}
+
+.montserratBold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+// العناوين الفرعية (Sub Headings)
+.cairoSemibold {
+  font-family: "Cairo", sans-serif;
+  font-weight: 600;
+}
+
+.poppinsSemibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+// النصوص العادية (Regular Text)
+.cairoRegular {
+  font-family: "Cairo", sans-serif;
+  font-weight: 400;
+}
+
+.poppinsRegular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+// الأزرار / الأقواس (Buttons/Actions)
+.cairoMedium {
+  font-family: "Cairo", sans-serif;
+  font-weight: 500;
+}
+
+.poppinsMedium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}

@@ -1,0 +1,184 @@
+// contact-us.component.scss
+
+// Custom input focus effects
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(212, 175, 106, 0.1);
+}
+
+// Smooth transitions for form inputs
+input,
+textarea {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-color: #d4af6a;
+  }
+}
+
+// Button hover effects
+button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  &:hover:not(:disabled)::before {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+// ============================================
+// Phone Input Styling - EXACT MATCH TO OTHER INPUTS
+// ============================================
+
+::ng-deep .iti {
+  width: 100% !important;
+  display: block !important;
+}
+
+// Main phone input - EXACT SAME AS OTHER INPUTS
+::ng-deep input[type="tel"] {
+  width: 100% !important;
+  height: 48px !important;
+  padding: 12px 16px !important;
+  padding-right: 80px !important; // Space for flag
+  border: 2px solid #e5e7eb !important;
+  border-radius: 0.5rem !important;
+  font-size: 1rem !important;
+  background-color: #3b3b3b !important;
+  transition: all 0.2s ease-in-out !important;
+  outline: none !important;
+
+  &:hover {
+    border-color: #d4af6a !important;
+  }
+
+  &:focus {
+    border-color: #d4af6a !important;
+    box-shadow: 0 0 0 3px rgba(212, 175, 106, 0.1) !important;
+  }
+
+  &::placeholder {
+    color: #9ca3af !important;
+  }
+}
+
+// Flag container positioning
+::ng-deep .iti__flag-container {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  padding: 0 !important;
+}
+
+// Selected flag button
+::ng-deep .iti__selected-flag {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 8px !important;
+  background-color: transparent !important;
+  border: none !important;
+  height: 100% !important;
+  outline: none !important;
+
+  &:hover,
+  &:focus {
+    background-color: transparent !important;
+    outline: none !important;
+  }
+}
+
+// Arrow icon
+::ng-deep .iti__arrow {
+  margin-left: 4px !important;
+  border-left: 3px solid transparent !important;
+  border-right: 3px solid transparent !important;
+  border-top: 4px solid #6b7280 !important;
+  border-bottom: 0 !important;
+}
+
+// Country dropdown list
+::ng-deep .iti__country-list {
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid #e5e7eb !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+  margin-top: 4px !important;
+  z-index: 1000 !important;
+  background-color: #fff !important;
+}
+
+// Country items in dropdown
+::ng-deep .iti__country {
+  padding: 10px 12px !important;
+  transition: background-color 0.15s ease !important;
+
+  &:hover {
+    background-color: #f9fafb !important;
+  }
+
+  &.iti__highlight {
+    background-color: #d4af6a !important;
+    color: #1a3d3d !important;
+  }
+}
+
+// Dial code in dropdown
+::ng-deep .iti__dial-code {
+  color: #6b7280 !important;
+}
+
+// Error state - same red border as other inputs
+::ng-deep .border-red-500 input[type="tel"],
+::ng-deep input[type="tel"].ng-invalid.ng-touched {
+  border-color: #ef4444 !important;
+}
+
+// Custom scrollbar for country list
+::ng-deep .iti__country-list {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #d4af6a;
+    border-radius: 3px;
+
+    &:hover {
+      background: #c49d58;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .grid {
+    gap: 1rem;
+  }
+
+  ::ng-deep input[type="tel"] {
+    padding-right: 70px !important;
+  }
+}

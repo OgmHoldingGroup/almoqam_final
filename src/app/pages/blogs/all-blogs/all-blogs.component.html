@@ -1,0 +1,81 @@
+<app-main-header [pageTitle]="pageTitle" [showPath]="true" />
+
+<section class="all-blogs-section">
+  <div class="main-cont">
+    <div class="section-header">
+      <h2
+        class="subtitle"
+        [ngClass]="currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'"
+      >
+        {{ currentLang() === "ar" ? "مدونتنا" : "Our Blog" }}
+      </h2>
+      <h3
+        class="main-title"
+        [ngClass]="
+          currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+        "
+      >
+        {{
+          currentLang() === "ar"
+            ? "آخر المقالات القانونية"
+            : "Latest Legal Articles"
+        }}
+      </h3>
+      <div class="title-divider"></div>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card" *ngFor="let post of paginatedPosts()">
+        <a [routerLink]="['/blog', post.slug]" class="blog-link">
+          <div class="blog-image">
+            @if(post.img){
+
+            <img src="imgs/blogs/{{ post.img }}" alt="Blog" />
+            }@else {
+            <img src="imgs/blogs/black.png" alt="Blog" />
+
+            }
+            <div class="image-overlay"></div>
+          </div>
+          <div class="blog-content">
+            <h4
+              class="blog-title"
+              [ngClass]="
+                currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+              "
+            >
+              {{ getText(post.title) }}
+            </h4>
+            <div class="blog-footer">
+              <span
+                class="read-more"
+                [ngClass]="
+                  currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'
+                "
+              >
+                {{ currentLang() === "ar" ? "اقرأ المزيد" : "Read More" }}
+                <i
+                  class="fa-solid fa-arrow-left"
+                  [style.transform]="
+                    currentLang() === 'en' ? 'rotate(180deg)' : 'none'
+                  "
+                ></i>
+              </span>
+            </div>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <!-- Paginator -->
+    <div class="card flex justify-center max-w-full">
+      <p-paginator
+        (onPageChange)="onPageChange($event)"
+        [first]="first()"
+        [rows]="rows()"
+        [totalRecords]="blogPosts().length"
+        [rowsPerPageOptions]="[9, 12, 18]"
+      />
+    </div>
+  </div>
+</section>

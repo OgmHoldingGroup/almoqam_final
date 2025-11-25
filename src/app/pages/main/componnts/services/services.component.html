@@ -1,0 +1,43 @@
+<section class="services-section">
+  <div class="main-cont">
+    <div class="section-header">
+      <h2 class="subtitle">{{ "HEADER.OURSRV" | translate }}</h2>
+      <h3 class="main-title">{{ "HOME.LEGAL_SERVICES" | translate }}</h3>
+      <div class="title-divider"></div>
+    </div>
+
+    <div class="services-grid">
+      @for (srv of services(); track $index) {
+      <div class="service-card">
+        <div class="service-header">
+          <i [class]="srv.icon" class="service-icon"></i>
+          <h4 class="service-title">{{ getText(srv.title) }}</h4>
+        </div>
+
+        <p class="service-description">{{ getText(srv.description) }}</p>
+
+        <a [routerLink]="srv.link" class="service-link">
+          <span>{{ getText(srv.linkText) }}</span>
+          <i
+            [class]="
+              currentLang() === 'ar'
+                ? 'fa-solid fa-arrow-left'
+                : 'fa-solid fa-arrow-right'
+            "
+          ></i>
+        </a>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner-small">
+  <div class="cta-content">
+    <h2 class="cta-title">{{ "CTA.TITLE" | translate }}</h2>
+    <button class="cta-button" (click)="openWhatsApp()">
+      {{ "CTA.BUTTON" | translate }}
+      <i class="fa-brands fa-whatsapp"></i>
+    </button>
+  </div>
+</section>

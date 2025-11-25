@@ -1,0 +1,153 @@
+.map-wrapper {
+  width: 100%;
+
+  &.compact {
+    max-width: 500px;
+  }
+
+  &.full {
+    max-width: 100%;
+  }
+}
+
+.map-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a3d3d;
+  margin-bottom: 15px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.map-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+
+    .map-overlay {
+      opacity: 1;
+    }
+
+    iframe {
+      filter: grayscale(0%) brightness(1);
+    }
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    filter: grayscale(20%) brightness(0.9);
+    transition: filter 0.3s ease;
+  }
+}
+
+.map-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(212, 175, 106, 0.95);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+
+  i {
+    font-size: 16px;
+  }
+
+  &:hover {
+    background: #c49d58;
+    transform: scale(1.1);
+  }
+}
+
+.address-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(212, 175, 106, 0.08);
+  border-radius: 8px;
+  border-right: 3px solid #d4af6a;
+
+  i {
+    color: #d4af6a;
+    font-size: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  p {
+    margin: 0;
+    color: #1a3d3d;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.map-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: #d4af6a;
+  color: #1a3d3d;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(212, 175, 106, 0.3);
+
+  i {
+    font-size: 16px;
+  }
+
+  &:hover {
+    background: #c49d58;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(212, 175, 106, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+  }
+}
+
+// RTL Support
+[dir="rtl"] {
+  .address-text {
+    border-right: none;
+    border-left: 3px solid #d4af6a;
+  }
+
+  .map-overlay {
+    left: auto;
+    right: 12px;
+  }
+}

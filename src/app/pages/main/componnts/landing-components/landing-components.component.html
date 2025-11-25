@@ -1,0 +1,46 @@
+<div class="hero-wrapper">
+  <p-carousel
+    [value]="slides()"
+    [numVisible]="1"
+    [numScroll]="1"
+    [circular]="true"
+    [autoplayInterval]="4000"
+    [showNavigators]="false"
+    class="hero-carousel"
+    [showIndicators]="false"
+  >
+    <ng-template pTemplate="item" let-slide>
+      <div class="slide">
+        <div class="overlay"></div>
+        <div
+          class="content"
+          [style.text-align]="currentLang() === 'en' ? 'left' : 'right'"
+        >
+          <h2
+            class="text-6xl"
+            [ngClass]="
+              currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+            "
+          >
+            {{ getText(slide.title) }}
+          </h2>
+          <p
+            class="text-3xl"
+            [ngClass]="
+              currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+            "
+          >
+            {{ getText(slide.subtitle) }}
+          </p>
+          <button
+            [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+            pButton
+            type="button"
+            [label]="getText(slide.button)"
+            class="hero-btn"
+          ></button>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>

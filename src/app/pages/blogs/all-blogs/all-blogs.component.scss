@@ -1,0 +1,319 @@
+// انسخ نفس الـ styles من blog.component.scss بس بدل blog-section حط all-blogs-section
+
+.all-blogs-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+  min-height: 100vh;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+
+    .subtitle {
+      font-size: 24px;
+      color: #edb970;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .main-title {
+      font-size: 42px;
+      color: #0f201f;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .title-divider {
+      width: 80px;
+      height: 3px;
+      background: #edb970;
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+    justify-items: center;
+  }
+
+  .blog-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    width: 100%;
+    max-width: 450px;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .blog-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .blog-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: #e0e0e0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 32, 31, 0) 0%,
+        rgba(15, 32, 31, 0.7) 100%
+      );
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+
+      .image-overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .blog-content {
+    padding: 30px 25px;
+  }
+
+  .blog-title {
+    font-size: 20px;
+    color: #0f201f;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 80px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.3s ease;
+  }
+
+  .blog-card:hover .blog-title {
+    color: #edb970;
+  }
+
+  .blog-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #edb970;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      gap: 12px;
+
+      i {
+        transform: translateX(-5px);
+      }
+    }
+  }
+
+  // Paginator Styles
+  .card {
+    width: 100%;
+    margin-top: 40px;
+    padding: 0 20px;
+
+    ::ng-deep {
+      .p-paginator {
+        background: transparent;
+        border: none;
+        padding: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+
+        .p-paginator-pages {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          justify-content: center;
+        }
+
+        .p-paginator-page,
+        .p-paginator-first,
+        .p-paginator-prev,
+        .p-paginator-next,
+        .p-paginator-last {
+          min-width: 40px;
+          height: 40px;
+          border-radius: 8px;
+          border: 2px solid #e0e0e0;
+          color: #0f201f;
+          font-weight: 600;
+          transition: all 0.3s ease;
+
+          &:hover:not(.p-disabled) {
+            background: #edb970;
+            color: #fff;
+            border-color: #edb970;
+          }
+
+          &.p-highlight {
+            background: #edb970;
+            color: #fff;
+            border-color: #edb970;
+          }
+
+          &.p-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+          }
+        }
+
+        .p-dropdown {
+          min-width: 100px;
+          height: 40px;
+          border-radius: 8px;
+          border: 2px solid #e0e0e0;
+
+          .p-dropdown-label {
+            padding: 8px 12px;
+          }
+
+          &:hover {
+            border-color: #edb970;
+          }
+        }
+
+        .p-paginator-current {
+          color: #0f201f;
+          font-weight: 600;
+          padding: 0 15px;
+          min-width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .all-blogs-section {
+    padding: 80px 0;
+
+    .section-header {
+      margin-bottom: 60px;
+
+      .main-title {
+        font-size: 36px;
+      }
+    }
+
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .all-blogs-section {
+    padding: 60px 0;
+
+    .section-header {
+      margin-bottom: 50px;
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .main-title {
+        font-size: 30px;
+      }
+    }
+
+    .blog-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .blog-image {
+      height: 250px;
+    }
+
+    .blog-title {
+      font-size: 18px;
+      min-height: auto;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .all-blogs-section {
+    padding: 50px 0;
+
+    .section-header {
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .main-title {
+        font-size: 26px;
+      }
+    }
+
+    .blog-image {
+      height: 220px;
+    }
+
+    .blog-content {
+      padding: 25px 20px;
+    }
+
+    .blog-title {
+      font-size: 17px;
+      margin-bottom: 15px;
+    }
+
+    .read-more {
+      font-size: 14px;
+    }
+  }
+}

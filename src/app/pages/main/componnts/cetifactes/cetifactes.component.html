@@ -1,0 +1,32 @@
+<section class="landing-section">
+  <div class="main-cont">
+    <div class="landing-content">
+      <div class="certificates-section">
+        <h3
+          class="certificates-title"
+          [ngClass]="
+            currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+          "
+        >
+          {{
+            currentLang() === "ar"
+              ? " اعتماداتنا وشهاداتنا المهنية "
+              : "Our Accreditations & Professional Certifications"
+          }}
+        </h3>
+        <p>
+          {{
+            currentLang() === "ar"
+              ? "نفتخر بحصول مكتب المقحمي للمحاماة والاستشارات القانونية على عدد من الاعتمادات الموثوقة من جهات محلية ودولية، تأكيدًا على التزامنا بأعلى معايير المهنية والجودة في تقديم الخدمات القانونية."
+              : "Al-Moqhami Law Firm is proud to hold multiple national and international accreditations, reflecting our commitment to professionalism, integrity, and the highest legal standards."
+          }}
+        </p>
+        <div class="certificates-grid">
+          <div class="certificate-item" *ngFor="let img of certificats()">
+            <img [src]="'imgs/certificats/' + img" [alt]="'Certificate'" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

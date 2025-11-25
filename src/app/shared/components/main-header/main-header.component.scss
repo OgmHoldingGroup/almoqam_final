@@ -1,0 +1,499 @@
+.main-header {
+  .main-cont {
+    padding: 0 !important;
+    max-width: 100%;
+  }
+
+  // ==========================================
+  // 1. Consultation Banner
+  // ==========================================
+  .consultation-banner {
+    background: #eebc75;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    .banner-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #0f201f;
+      margin: 0;
+      text-align: center;
+    }
+
+    .consultation-btn {
+      background: #0f201f;
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 25px;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      i {
+        font-size: 22px;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        background: #7a7a7a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+        i {
+          transform: scale(1.15);
+        }
+      }
+    }
+  }
+
+  // ==========================================
+  // 2. Contact & Services Bar
+  // ==========================================
+  // .contact-services-bar {
+  //   background: #0f201f;
+  //   padding: 20px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   flex-wrap: wrap;
+  //   gap: 30px;
+  //   margin: 20px 0;
+
+  //   .info-item {
+  //     display: flex;
+  //     align-items: center;
+  //     gap: 10px;
+  //     color: #fff;
+  //     transition: all 0.3s ease;
+
+  //     &:hover {
+  //       transform: translateY(-2px);
+
+  //       i {
+  //         color: #fff;
+  //       }
+  //     }
+
+  //     i {
+  //       color: #edb970;
+  //       font-size: 18px;
+  //       transition: all 0.3s ease;
+  //     }
+
+  //     a,
+  //     h4 {
+  //       color: #fff;
+  //       text-decoration: none;
+  //       font-size: 16px;
+  //       margin: 0;
+  //       transition: color 0.3s ease;
+  //       white-space: nowrap;
+
+  //       &:hover {
+  //         color: #edb970;
+  //       }
+  //     }
+
+  //     &.reverse-direction {
+  //       flex-direction: row-reverse;
+  //     }
+  //   }
+
+  //   .social-links {
+  //     display: flex;
+  //     align-items: center;
+  //     gap: 15px;
+
+  //     a {
+  //       display: flex;
+  //       align-items: center;
+  //       justify-content: center;
+  //       width: 40px;
+  //       height: 40px;
+  //       border-radius: 50%;
+  //       background: rgba(237, 185, 112, 0.1);
+  //       transition: all 0.3s ease;
+
+  //       i {
+  //         color: #edb970;
+  //         font-size: 18px;
+  //         transition: all 0.3s ease;
+  //       }
+
+  //       &:hover {
+  //         background: #edb970;
+  //         transform: translateY(-3px) rotate(360deg);
+
+  //         i {
+  //           color: #fff;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  // ==========================================
+  // 3. Breadcrumb Section
+  // ==========================================
+  .breadcrumb-section {
+    position: relative;
+    background: url("../../../../../public/imgs/main-header.webp") center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    overflow: hidden;
+
+    .breadcrumb-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(16, 68, 62, 0.85);
+      z-index: 1;
+    }
+
+    .breadcrumb-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .page-title {
+      font-size: 48px;
+      font-weight: bold;
+      color: #fff;
+      margin: 0;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      animation: fadeInDown 0.6s ease;
+    }
+
+    .breadcrumb-path {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeInUp 0.6s ease;
+
+      .path-item {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+
+        &:hover:not(.current) {
+          color: #edb970;
+          cursor: pointer;
+        }
+
+        &.current {
+          color: #edb970;
+        }
+      }
+
+      .path-separator {
+        color: #edb970;
+        font-size: 14px;
+
+        &.rotate-arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+// ==========================================
+// Animations
+// ==========================================
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ==========================================
+// Responsive Design
+// ==========================================
+
+// Tablets (992px and below)
+@media (max-width: 992px) {
+  .main-header {
+    .consultation-banner {
+      padding: 20px 15px;
+      gap: 20px;
+
+      .banner-title {
+        font-size: 28px;
+      }
+
+      .consultation-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+      }
+    }
+
+    .contact-services-bar {
+      gap: 20px;
+      padding: 18px 15px;
+
+      .info-item {
+        a,
+        h4 {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .breadcrumb-section {
+      min-height: 250px;
+      padding: 40px 15px;
+
+      .page-title {
+        font-size: 40px;
+      }
+
+      .breadcrumb-path {
+        gap: 10px;
+
+        .path-item {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+// Mobile (768px and below)
+@media (max-width: 768px) {
+  .main-header {
+    .consultation-banner {
+      padding: 18px 15px;
+      gap: 15px;
+      flex-direction: column;
+
+      .banner-title {
+        font-size: 24px;
+        line-height: 1.4;
+      }
+
+      .consultation-btn {
+        padding: 12px 24px;
+        font-size: 15px;
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+
+    .contact-services-bar {
+      gap: 15px;
+      padding: 15px;
+
+      .info-item {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+
+        a,
+        h4 {
+          font-size: 14px;
+        }
+      }
+
+      .social-links {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+
+        a {
+          width: 38px;
+          height: 38px;
+
+          i {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .breadcrumb-section {
+      min-height: 220px;
+      padding: 35px 15px;
+
+      .page-title {
+        font-size: 32px;
+      }
+
+      .breadcrumb-path {
+        gap: 8px;
+
+        .path-item {
+          font-size: 14px;
+        }
+
+        .path-separator {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+// Small Mobile (480px and below)
+@media (max-width: 480px) {
+  .main-header {
+    .consultation-banner {
+      padding: 15px 10px;
+
+      .banner-title {
+        font-size: 20px;
+      }
+
+      .consultation-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        gap: 8px;
+
+        i {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .contact-services-bar {
+      gap: 12px;
+      padding: 12px 10px;
+
+      .info-item {
+        gap: 8px;
+
+        i {
+          font-size: 16px;
+        }
+
+        a,
+        h4 {
+          font-size: 13px;
+        }
+      }
+
+      .social-links {
+        gap: 10px;
+
+        a {
+          width: 36px;
+          height: 36px;
+
+          i {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .breadcrumb-section {
+      min-height: 200px;
+      padding: 30px 10px;
+
+      .page-title {
+        font-size: 26px;
+        line-height: 1.3;
+      }
+
+      .breadcrumb-path {
+        gap: 6px;
+
+        .path-item {
+          font-size: 12px;
+        }
+
+        .path-separator {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+// Extra Small Mobile (360px and below)
+@media (max-width: 360px) {
+  .main-header {
+    .consultation-banner {
+      .banner-title {
+        font-size: 18px;
+      }
+
+      .consultation-btn {
+        font-size: 13px;
+        padding: 10px 18px;
+      }
+    }
+
+    .breadcrumb-section {
+      min-height: 180px;
+
+      .page-title {
+        font-size: 22px;
+      }
+
+      .breadcrumb-path {
+        .path-item {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+
+// RTL Support
+[dir="rtl"] {
+  .breadcrumb-path {
+    .path-separator:not(.rotate-arrow) {
+      transform: scaleX(-1);
+    }
+  }
+}
+
+[dir="ltr"] {
+  .breadcrumb-path {
+    .path-separator.rotate-arrow {
+      transform: rotate(0deg) !important;
+    }
+  }
+}

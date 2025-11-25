@@ -1,0 +1,105 @@
+<section class="attorney-profile" [attr.lang]="currentLang()">
+  <div class="profile-container">
+    <div class="profile-image">
+      <!-- <img src="imgs/client.webp" alt="المحامي" /> -->
+      <img src="imgs/cor/MainPhoto.webp" alt="" />
+
+      <div class="image-overlay"></div>
+    </div>
+
+    <div class="profile-content">
+      <h2
+        class="attorney-name"
+        [ngClass]="
+          currentLang() === 'ar' ? 'tajawalExtraBold' : 'montserratBold'
+        "
+      >
+        @if (currentLang()==='ar') {
+        {{ attorneyData.name.ar }}
+        } @else {
+        {{ attorneyData.name.en }}
+        }
+      </h2>
+
+      <p
+        class="attorney-title"
+        [ngClass]="currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'"
+      >
+        @if (currentLang() === 'ar') {
+        {{ attorneyData.title.ar }}
+        } @else {
+        {{ attorneyData.title.en }}
+        }
+      </p>
+
+      <div class="divider"></div>
+
+      <p
+        class="attorney-bio"
+        [ngClass]="currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'"
+      >
+        @if (currentLang() === 'ar') {
+        {{ attorneyData.bio.ar }}
+        } @else {
+        {{ attorneyData.bio.en }}
+        }
+      </p>
+
+      <div class="social-links">
+        <a
+          href="https://www.facebook.com/Almughemlaw"
+          class="social-link"
+          aria-label="Facebook"
+          target="_blank"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a
+          href="https://x.com/Almughemlaw"
+          class="social-link"
+          aria-label="X (Twitter)"
+          target="_blank"
+        >
+          <i class="fab fa-x-twitter"></i>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/company/almughemlaw"
+          class="social-link"
+          aria-label="LinkedIn"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a
+          href="https://www.instagram.com/Almughemlaw"
+          class="social-link"
+          aria-label="Instagram"
+          target="_blank"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@Almughemlaw"
+          class="social-link"
+          aria-label="TikTok"
+          target="_blank"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a
+          href="https://www.youtube.com/@Almughemlaw"
+          class="social-link"
+          aria-label="YouTube"
+          target="_blank"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

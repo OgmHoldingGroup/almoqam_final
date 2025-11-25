@@ -1,0 +1,45 @@
+<section class="contact-banner">
+  <div class="main-cont">
+    <div class="banner-content">
+      <div class="banner-titles">
+        <h2 class="main-title">{{ "CTA.DONT" | translate }}</h2>
+        <h3 class="sub-title">{{ "CTA.DES" | translate }}</h3>
+      </div>
+
+      <div class="contact-info-grid">
+        <div class="contact-info-item" *ngFor="let item of contactInfo()">
+          <i
+            [class]="item.icon"
+            [ngStyle]="{
+              transform:
+                currentLang() === 'en' ? 'rotateY(180deg)' : 'rotateY(0)'
+            }"
+          ></i>
+          <a
+            *ngIf="item.link; else plainText"
+            [href]="item.link"
+            class="info-text"
+            target="_blank"
+          >
+            {{ getText(item.text) }}
+          </a>
+          <ng-template #plainText>
+            <span class="info-text">{{ getText(item.text) }}</span>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner 2 -->
+<section class="cta-banner-large">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <h2 class="banner-title">{{ "CTA.DONT" | translate }}</h2>
+    <button class="cta-button" (click)="openWhatsApp()">
+      <i class="fa-brands fa-whatsapp"></i>
+      {{ "CTA.BUTTON" | translate }}
+    </button>
+  </div>
+</section>

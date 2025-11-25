@@ -1,0 +1,73 @@
+<div
+  class="map-wrapper"
+  [class.compact]="variant === 'compact'"
+  [class.full]="variant === 'full'"
+>
+  <!-- Optional Title -->
+  <h3
+    *ngIf="showTitle"
+    class="map-title"
+    [ngClass]="currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'"
+  >
+    {{ currentLang() === "ar" ? "موقعنا على الخريطة" : "Our Location" }}
+  </h3>
+
+  <!-- Map Container -->
+  <div class="map-container">
+    <iframe
+      [src]="mapEmbedUrl"
+      [style.height.px]="height"
+      width="100%"
+      style="border: 0"
+      [style.border-radius.px]="borderRadius"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      [title]="
+        currentLang() === 'ar'
+          ? 'موقع المكتب على الخريطة'
+          : 'Office location on map'
+      "
+    ></iframe>
+
+    <!-- Overlay Link -->
+    <a
+      [href]="mapLink"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="map-overlay"
+      [attr.aria-label]="
+        currentLang() === 'ar'
+          ? 'فتح الموقع في خرائط جوجل'
+          : 'Open location in Google Maps'
+      "
+    >
+      <i class="fa-solid fa-up-right-from-square"></i>
+    </a>
+  </div>
+
+  <!-- Optional Address Text -->
+  <div
+    *ngIf="showAddress"
+    class="address-text"
+    [ngClass]="currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'"
+  >
+    <i class="fa-solid fa-location-dot"></i>
+    <p>
+      {{ currentLang() === "ar" ? addressAR : addressEN }}
+    </p>
+  </div>
+
+  <!-- Optional Direct Link Button -->
+  <a
+    *ngIf="showDirectLink"
+    [href]="mapLink"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="map-link-btn"
+    [ngClass]="currentLang() === 'ar' ? 'cairoMedium' : 'poppinsMedium'"
+  >
+    <i class="fa-solid fa-map-location-dot"></i>
+    {{ currentLang() === "ar" ? "عرض الموقع على الخريطة" : "View on Map" }}
+  </a>
+</div>

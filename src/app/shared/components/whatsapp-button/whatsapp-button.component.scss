@@ -1,0 +1,72 @@
+// .whatsapp-btn {
+//   position: fixed;
+//   bottom: 25px;
+//   right: 25px;
+//   width: 70px;
+//   height: 70px;
+//   background: #25d366;
+//   border-radius: 50%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+
+//   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+//   z-index: 9999;
+//   transition: transform 0.25s ease-in-out, box-shadow 0.25s ease;
+
+//   i {
+//     font-size: 38px; // 🔥 أكبر + شكله واضح
+//     color: #fff;
+//   }
+
+//   &:hover {
+//     transform: scale(1.12);
+//     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+//   }
+// }
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  font-size: 32px; // كبر حجم الأيقونة
+  color: #fff;
+
+  width: 65px;
+  height: 65px;
+  background: #25d366;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 9999;
+
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out,
+    background 0.25s ease-in-out;
+
+  animation: floatUpDown 3s ease-in-out infinite;
+
+  &:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px #25d366, 0 0 35px #1aaa52;
+    background: #2fe172;
+  }
+}
+
+/* حركة Up / Down */
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

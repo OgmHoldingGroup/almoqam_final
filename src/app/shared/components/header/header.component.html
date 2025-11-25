@@ -1,0 +1,134 @@
+<!-- <div
+  class="contact-services-bar"
+  [ngClass]="currentLang === 'ar' ? 'cairoRegular' : 'poppinsFamily'"
+>
+  <div class="info-item phone-item">
+    <i class="fa-solid fa-mobile-button"></i>
+    <a href="tel:{{ phoneNum }}">{{ phoneNum }}</a>
+  </div>
+
+  <div class="info-item email-item">
+    <i class="fa-regular fa-envelope-open"></i>
+    <a href="mailto:{{ email }}">{{ email }}</a>
+  </div>
+
+  <div class="social-links">
+    <a
+      href="https://www.facebook.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+    >
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a
+      href="https://www.tiktok.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="TikTok"
+    >
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+    <a
+      href="https://twitter.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+    >
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a
+      href="https://www.instagram.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+    >
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
+</div> -->
+
+<header [ngClass]="currentLang === 'ar' ? 'cairoRegular' : 'poppinsFamily'">
+  <div class="main-cont">
+    <div class="header-wrapper">
+      <!-- Mobile Menu Icon -->
+      <i class="fa-solid fa-bars menu-toggle" (click)="toggleMenu()"></i>
+
+      <!-- Logo -->
+      <div class="all flex items-center gap-10">
+        <div class="logo cursor-pointer" routerLink="/">
+          <img src="logo.png" alt="logo" />
+        </div>
+
+        <!-- Navigation -->
+        <nav [class.active]="menuOpen" [class.rtl]="currentLang === 'ar'">
+          <div class="overlay" (click)="toggleMenu()" *ngIf="menuOpen"></div>
+
+          <div class="menu-content">
+            <div class="menu-header">
+              <h3>{{ currentLang === "ar" ? "القائمة" : "Menu" }}</h3>
+              <i
+                class="fa-solid fa-times close-icon"
+                (click)="toggleMenu()"
+              ></i>
+            </div>
+            <a
+              routerLink="/"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              {{ "HEADER.HOME" | translate }}
+            </a>
+            <a class="cursor-pointer" (click)="scrollTo('whyUs')">
+              {{ "HEADER.ABOUT" | translate }}
+            </a>
+
+            <a routerLink="/our-services" routerLinkActive="active-link">
+              {{ "HEADER.OURSRV" | translate }}
+            </a>
+
+            <!-- <a
+            routerLink="/LegalSdocumentationServices"
+            routerLinkActive="active-link"
+          >
+            {{ "LegalSdocumentationServices.TITLE" | translate }}
+          </a> -->
+
+            <!-- <a routerLink="/ChildCustody" routerLinkActive="active-link">
+            {{ "ChildCustody.TITLE" | translate }}
+          </a> -->
+
+            <a routerLink="/blogs" routerLinkActive="active-link">
+              {{ "HEADER.BLOG" | translate }}
+            </a>
+
+            <a routerLink="/FAQ" routerLinkActive="active-link">
+              {{ "HEADER.FAQ" | translate }}
+            </a>
+
+            <a routerLink="/contact" routerLinkActive="active-link">
+              {{ "HEADER.CONTACT" | translate }}
+            </a>
+          </div>
+        </nav>
+      </div>
+      <!-- Language Buttons -->
+      <div class="lang-switcher">
+        <button
+          class="lang-btn"
+          (click)="switchLang('ar')"
+          [class.active]="currentLang === 'ar'"
+        >
+          عربي
+        </button>
+        <button
+          class="lang-btn"
+          (click)="switchLang('en')"
+          [class.active]="currentLang === 'en'"
+        >
+          EN
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
