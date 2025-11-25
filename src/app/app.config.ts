@@ -35,7 +35,8 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideTranslateService({
       loader: provideTranslateHttpLoader({
-        prefix: 'i18n/', // بدون slash في البداية - هيستخدم base href
+        // prefix: 'i18n/',
+        prefix: './i18n/',
         suffix: '.json',
       }),
       fallbackLang: 'en',
