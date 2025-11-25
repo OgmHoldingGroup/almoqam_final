@@ -36,7 +36,7 @@ export const appConfig: ApplicationConfig = {
     provideTranslateService({
       loader: provideTranslateHttpLoader({
         prefix: window.location.pathname.includes('/almoqham/')
-          ? '/almoqham/i18n/'
+          ? '/almogam_final/i18n/'
           : '/i18n/',
         suffix: '.json',
       }),
