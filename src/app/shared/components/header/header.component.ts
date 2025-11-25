@@ -34,15 +34,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private router: Router,
     private zone: NgZone
   ) {}
+
   scrollTo(sectionId: string) {
     const scroll = () => {
       const el = document.getElementById(sectionId);
       if (el) {
-        const header = document.querySelector('app-main-header'); // أو أي selector للهيدر
+        const header = document.querySelector('header');
         const headerHeight = header ? (header as HTMLElement).offsetHeight : 0;
 
         const elementPosition = el.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - headerHeight - 10; // 10px margin إضافية
+        const offsetPosition = elementPosition - headerHeight - 10;
 
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         return true;
@@ -61,6 +62,21 @@ export class HeaderComponent implements OnInit, OnDestroy {
         if (scroll()) clearInterval(interval);
       }, 50);
     }
+  }
+
+  // دالة جديدة للتعامل مع الضغط على اللينكات العادية
+  onLinkClick(route: string, event?: Event) {
+    // إغلاق القائمة لو مفتوحة
+    this.menuOpen = false;
+    document.body.style.overflow = '';
+
+    // لو في نفس الصفحة، اعمل scroll لفوق
+    if (this.router.url === route) {
+      event?.preventDefault(); // منع السلوك الافتراضي للـ routerLink
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // لو صفحة مختلفة، الـ router هيعمل navigate عادي
+    // والـ NavigationEnd subscription هيعمل scroll لفوق تلقائياً
   }
 
   ngOnInit() {

@@ -56,7 +56,11 @@
 
       <!-- Logo -->
       <div class="all flex items-center gap-10">
-        <div class="logo cursor-pointer" routerLink="/">
+        <div
+          class="logo cursor-pointer"
+          routerLink="/"
+          (click)="onLinkClick('/', $event)"
+        >
           <img src="logo.png" alt="logo" />
         </div>
 
@@ -72,46 +76,55 @@
                 (click)="toggleMenu()"
               ></i>
             </div>
+
             <a
               routerLink="/"
               routerLinkActive="active-link"
               [routerLinkActiveOptions]="{ exact: true }"
+              (click)="onLinkClick('/', $event)"
             >
               {{ "HEADER.HOME" | translate }}
             </a>
+
             <a class="cursor-pointer" (click)="scrollTo('whyUs')">
               {{ "HEADER.ABOUT" | translate }}
             </a>
 
-            <a routerLink="/our-services" routerLinkActive="active-link">
+            <a
+              routerLink="/our-services"
+              routerLinkActive="active-link"
+              (click)="onLinkClick('/our-services', $event)"
+            >
               {{ "HEADER.OURSRV" | translate }}
             </a>
 
-            <!-- <a
-            routerLink="/LegalSdocumentationServices"
-            routerLinkActive="active-link"
-          >
-            {{ "LegalSdocumentationServices.TITLE" | translate }}
-          </a> -->
-
-            <!-- <a routerLink="/ChildCustody" routerLinkActive="active-link">
-            {{ "ChildCustody.TITLE" | translate }}
-          </a> -->
-
-            <a routerLink="/blogs" routerLinkActive="active-link">
+            <a
+              routerLink="/blogs"
+              routerLinkActive="active-link"
+              (click)="onLinkClick('/blogs', $event)"
+            >
               {{ "HEADER.BLOG" | translate }}
             </a>
 
-            <a routerLink="/FAQ" routerLinkActive="active-link">
+            <a
+              routerLink="/FAQ"
+              routerLinkActive="active-link"
+              (click)="onLinkClick('/FAQ', $event)"
+            >
               {{ "HEADER.FAQ" | translate }}
             </a>
 
-            <a routerLink="/contact" routerLinkActive="active-link">
+            <a
+              routerLink="/contact"
+              routerLinkActive="active-link"
+              (click)="onLinkClick('/contact', $event)"
+            >
               {{ "HEADER.CONTACT" | translate }}
             </a>
           </div>
         </nav>
       </div>
+
       <!-- Language Buttons -->
       <div class="lang-switcher">
         <button
