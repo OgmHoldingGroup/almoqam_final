@@ -1,0 +1,79 @@
+{
+  "SHARED": {
+    "name": "Your Name",
+    "PHONE": "Phone Number",
+    "CHOOSESERVICE": "Choose Service",
+
+    "YOURMSG": "Your Messege",
+    "OPT": "Optional",
+    "CON_WITH_US": "Contact With Us"
+  },
+  "HEADER": {
+    "HOME": "Home",
+    "CONSULT": "Consultation",
+    "INDIVIDUAL": "Individual Services",
+    "NOTARY": "Notary Services",
+    "COMPANY": "Company Services",
+    "BLOG": " Blog",
+    "FAQ": "FAQ",
+    "CONTACT": "Contact Us",
+    "OURSRV": "Our Services",
+    "ABOUT": "About US"
+  },
+  "HOME": {
+    "TITLE": "Dr. Sulaiman Ben Saleh Al-Muqham Law Firm and Legal Consultations",
+    "SUBTITLE": "We are at your service 24/7 – all week long.",
+    "BUTTON": "Book Your Consultation",
+    "LEGAL_SERVICES": "Legal Services for Everyone!"
+  },
+  "CTA": {
+    "TITLE": "Got a Problem? Consult Us",
+    "BUTTON": "Request Consultation",
+    "DONT": "Don't hesitate to contact us",
+    "DES": "Our legal team is available 24/7 to provide accurate and reliable legal consultations tailored to your needs — whenever you need them."
+  },
+  "BLOG": {
+    "SUBTITLE": "Latest Legal Articles & Insights",
+    "TITLE": "Stay informed with the latest legal updates, regulations, and insights that help you make confident and informed decisions."
+  },
+  "FOOTER": {
+    "CONTACT_INFO": "Contact Information",
+    "ADDRESS": "Prince Saad bin Abdulrahman Al Awwal Branch Road, Al Rawabi, Riyadh 14215",
+    "EMAIL": "",
+    "PHONE": "",
+    "USEFUL_LINKS": "Useful Links",
+    "NEWSLETTER": "Newsletter",
+    "EMAIL_PLACEHOLDER": "Email Address",
+    "SEND_BTN": "Send",
+    "FOLLOW_US": "Follow Us",
+    "COPYRIGHT": "All Rights Reserved",
+    "COMPANY_NAME": "Soliman Saleeh Almoqham",
+    "craftedWithLove": "With love crafted by",
+    "OGM": "OGM Holding Group"
+  },
+  "NEWSLETTER": {
+    "SUCCESS": "Successfully subscribed to the newsletter!",
+    "ERROR": "Please enter a valid email address"
+  },
+  "SERVICES": {
+    "GOOD": "Comprehensive legal solutions delivered with excellence and integrity.",
+    "DETAIlS": "Service details",
+    "ORDER": "Order now",
+    "RULESSRV": "Our Legal Services",
+    "SHOW_MORE": "Show More"
+  },
+  "LegalSdocumentationServices": {
+    "TITLE": "Legal documentation services",
+    "DETAIlS": "Service details",
+    "ORDER": "Order now",
+    "RULESSRV": "Our Legal Services",
+    "SHOW_MORE": "Show More"
+  },
+  "ChildCustody": {
+    "TITLE": "Child Custody",
+    "DETAIlS": "Service details",
+    "ORDER": "Order now",
+    "RULESSRV": "Our Legal Services",
+    "SHOW_MORE": "Show More"
+  }
+}
