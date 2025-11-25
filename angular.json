@@ -41,6 +41,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/almogam_final/",
               "budgets": [
                 {
                   "type": "initial",
