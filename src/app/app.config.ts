@@ -35,7 +35,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideTranslateService({
       loader: provideTranslateHttpLoader({
-        prefix: window.location.pathname.includes('/almoqham/')
+        prefix: window.location.pathname.includes('github.io')
           ? // ? '/almoqham/i18n/'
             '/almogam_final/i18n/' // غير الاسم للـ repo name بتاعك بالظبط
           : '/i18n/',
