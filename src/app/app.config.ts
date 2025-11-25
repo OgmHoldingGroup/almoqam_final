@@ -36,7 +36,8 @@ export const appConfig: ApplicationConfig = {
     provideTranslateService({
       loader: provideTranslateHttpLoader({
         prefix: window.location.pathname.includes('/almoqham/')
-          ? '/almogam_final/i18n/'
+          ? // ? '/almoqham/i18n/'
+            '/almogam_final/i18n/' // غير الاسم للـ repo name بتاعك بالظبط
           : '/i18n/',
         suffix: '.json',
       }),
