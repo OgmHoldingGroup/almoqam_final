@@ -1,9 +1,7 @@
 <section class="attorney-profile" [attr.lang]="currentLang()">
   <div class="profile-container">
     <div class="profile-image">
-      <!-- <img src="imgs/client.webp" alt="المحامي" /> -->
       <img src="imgs/cor/MainPhoto.webp" alt="" />
-
       <div class="image-overlay"></div>
     </div>
 
@@ -44,6 +42,31 @@
         {{ attorneyData.bio.en }}
         }
       </p>
+
+      <!-- Qualifications Section -->
+      <div class="qualifications-section">
+        <h3
+          class="qualifications-title"
+          [ngClass]="
+            currentLang() === 'ar' ? 'cairoSemibold' : 'poppinsSemibold'
+          "
+        >
+          @if (currentLang() === 'ar') { المؤهلات والعضويات } @else {
+          Qualifications & Memberships }
+        </h3>
+        <ul
+          class="qualifications-list"
+          [ngClass]="currentLang() === 'ar' ? 'cairoRegular' : 'poppinsRegular'"
+        >
+          @for (qualification of getQualifications(); track $index) {
+
+          <li class="qualification-item">
+            <i class="fas fa-certificate"></i>
+            <span>{{ qualification }}</span>
+          </li>
+          }
+        </ul>
+      </div>
 
       <div class="social-links">
         <a

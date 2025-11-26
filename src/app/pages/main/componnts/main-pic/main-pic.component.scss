@@ -215,9 +215,70 @@
     font-size: 18px;
     line-height: 2;
     color: #4a4a4a;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     max-width: 620px;
     animation: fadeInUp 0.8s ease-out 0.6s backwards;
+  }
+
+  // Qualifications Section
+  .qualifications-section {
+    margin-bottom: 40px;
+    animation: fadeInUp 0.8s ease-out 0.7s backwards;
+  }
+
+  .qualifications-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 12px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37 0%, #f0d678 100%);
+      border-radius: 2px;
+    }
+  }
+
+  .qualifications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .qualification-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4a4a4a;
+    transition: all 0.3s ease;
+
+    i {
+      color: #d4af37;
+      font-size: 16px;
+      margin-top: 4px;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      color: #1a1a1a;
+      transform: translateX(-5px);
+
+      i {
+        color: #f0d678;
+        transform: scale(1.1);
+      }
+    }
   }
 
   .social-links {
@@ -318,14 +379,16 @@
 
     .profile-container {
       grid-template-columns: 1fr;
+      grid-template-rows: 40vh auto;
       min-height: auto;
       width: 95vw;
       border-radius: 16px;
     }
 
     .profile-image {
-      height: 50vh;
-      min-height: 400px;
+      height: 40vh;
+      min-height: 300px;
+      grid-row: 1;
 
       img {
         object-position: center top;
@@ -340,8 +403,9 @@
     }
 
     .profile-content {
-      padding: 60px 40px;
+      padding: 50px 35px;
       text-align: center !important;
+      grid-row: 2;
 
       &::before {
         display: none;
@@ -349,58 +413,166 @@
     }
 
     .attorney-name {
-      font-size: 38px;
-    }
-
-    .attorney-title {
-      font-size: 15px;
-      letter-spacing: 2.5px;
-    }
-
-    .divider {
-      margin-inline: auto !important;
-    }
-
-    .attorney-bio {
-      max-width: 100%;
-    }
-
-    .social-links {
-      justify-content: center !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .profile-image {
-      height: 45vh;
-      min-height: 350px;
-    }
-
-    .profile-content {
-      padding: 50px 30px;
-    }
-
-    .attorney-name {
-      font-size: 32px;
+      font-size: 34px;
+      margin-bottom: 10px;
     }
 
     .attorney-title {
       font-size: 14px;
-      margin-bottom: 30px;
+      letter-spacing: 2.5px;
+      margin-bottom: 25px;
+    }
+
+    .divider {
+      margin-inline: auto !important;
+      margin-bottom: 25px;
     }
 
     .attorney-bio {
-      font-size: 16px;
-      line-height: 1.85;
-      margin-bottom: 40px;
+      max-width: 100%;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .qualifications-section {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .qualifications-title {
+      font-size: 18px;
+      margin-bottom: 18px;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .qualification-item {
+      justify-content: center;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 12px;
+      line-height: 1.6;
+
+      i {
+        font-size: 14px;
+        margin-top: 2px;
+      }
+
+      &:hover {
+        transform: translateX(0);
+      }
+    }
+
+    .social-links {
+      justify-content: center !important;
+      margin-top: 5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .profile-container {
+      grid-template-rows: 35vh auto;
+    }
+
+    .profile-image {
+      height: 35vh;
+      min-height: 280px;
+    }
+
+    .profile-content {
+      padding: 40px 25px;
+    }
+
+    .attorney-name {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .attorney-title {
+      font-size: 13px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .divider {
+      width: 60px;
+      margin-bottom: 20px;
+    }
+
+    .attorney-bio {
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 25px;
+    }
+
+    .qualifications-section {
+      margin-bottom: 30px;
+    }
+
+    .qualifications-title {
+      font-size: 17px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+
+      &::after {
+        width: 40px;
+      }
+    }
+
+    .qualification-item {
+      font-size: 13px;
+      margin-bottom: 10px;
+      gap: 12px;
+
+      i {
+        font-size: 13px;
+      }
+    }
+
+    .social-links {
+      gap: 12px;
     }
 
     .social-link {
-      width: 48px;
-      height: 48px;
+      width: 45px;
+      height: 45px;
 
       i {
-        font-size: 18px;
+        font-size: 17px;
+      }
+    }
+  }
+
+  // RTL adjustments for qualifications
+  &[lang="ar"] {
+    .qualifications-title::after {
+      left: auto;
+      right: 0;
+    }
+
+    .qualification-item {
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .qualifications-title::after {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
+
+      .qualification-item {
+        // display: block;
+        justify-content: start;
+        &:hover {
+          transform: translateX(0);
+        }
       }
     }
   }

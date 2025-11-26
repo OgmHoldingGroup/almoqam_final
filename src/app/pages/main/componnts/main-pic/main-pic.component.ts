@@ -56,4 +56,7 @@ export class MainPicComponent {
   getText(text: { ar: string; en: string }): string {
     return text[this.currentLang() as 'ar' | 'en'];
   }
+  getQualifications(): string[] {
+    return this.attorneyData.qualifications[this.currentLang() as 'ar' | 'en'];
+  }
 }
