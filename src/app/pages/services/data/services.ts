@@ -94,9 +94,9 @@ export const SERVICES = signal<OurSERVICES[]>([
     title: 'إجراءات الإفلاس',
     titleEn: 'Bankruptcy Procedures',
     description:
-      'تقدم شركة المشورة للمحاماة خدمات الإفلاس الكاملة للأفراد والشركات من خلال إعداد الطلبات ومتابعة الإجراءات القانونية أمام المحاكم المختصة، بهدف حماية الحقوق وتنظيم الالتزامات المالية بطريقة قانونية ومنصفة.',
+      'تقدم شركة د.سليمان  للمحاماة خدمات الإفلاس الكاملة للأفراد والشركات من خلال إعداد الطلبات ومتابعة الإجراءات القانونية أمام المحاكم المختصة، بهدف حماية الحقوق وتنظيم الالتزامات المالية بطريقة قانونية ومنصفة.',
     descriptionEn:
-      'Al-Mushawara Law Firm provides comprehensive bankruptcy services for individuals and companies, including preparing applications and following up on legal procedures before competent courts to protect rights and organize financial obligations fairly and lawfully.',
+      'Dr. Sulaiman bin Saleh Al-Muqhem  Law Firm provides comprehensive bankruptcy services for individuals and companies, including preparing applications and following up on legal procedures before competent courts to protect rights and organize financial obligations fairly and lawfully.',
     price: '3500 ريال سعودي',
     priceEn: '3500 SAR',
     image: '1.jpg',
@@ -117,9 +117,9 @@ export const SERVICES = signal<OurSERVICES[]>([
     title: 'المنازعات الضريبية والجمركية',
     titleEn: 'Tax and Customs Disputes',
     description:
-      'تقدم شركة المشورة للمحاماة خدمات ضريبية وجمركية شاملة، تشمل تمثيل العملاء أمام الجهات الضريبية والجمركية، وتقديم الاعتراضات والدفاعات القانونية لضمان حماية مصالحهم وتحقيق الامتثال الكامل للأنظمة.',
+      'تقدم شركة د.سليمان  للمحاماة خدمات ضريبية وجمركية شاملة، تشمل تمثيل العملاء أمام الجهات الضريبية والجمركية، وتقديم الاعتراضات والدفاعات القانونية لضمان حماية مصالحهم وتحقيق الامتثال الكامل للأنظمة.',
     descriptionEn:
-      'Al-Mushawara Law Firm provides comprehensive tax and customs services, including representing clients before tax and customs authorities, filing objections, and providing legal defenses to protect their interests and ensure full regulatory compliance.',
+      'Dr. Sulaiman bin Saleh Al-Muqhem  Law Firm provides comprehensive tax and customs services, including representing clients before tax and customs authorities, filing objections, and providing legal defenses to protect their interests and ensure full regulatory compliance.',
     price: '4000 ريال سعودي',
     priceEn: '4000 SAR',
     image: '3.JPG',

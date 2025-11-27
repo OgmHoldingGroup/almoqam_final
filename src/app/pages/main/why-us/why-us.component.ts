@@ -35,12 +35,12 @@ export class WhyUsComponent {
         en: 'Why Choose Us',
       },
       description: {
-        ar: 'في شركة د. سليمان  بن صالح المقحم للمحاماة والاستشارات القانونية نعتز بخبرة قانونية تمتد لأكثر من عشرون  عامًا، وبهيكل تنظيمي يضم أقسامًا متخصصة تغطي مختلف فروع القانون. نتميز بالدقة في الإجراءات، وسرعة إنجاز المعاملات، والحرص الدائم على حماية حقوق العملاء وتقديم ما يخدم مصالحهم بأعلى مستويات الأمان والسرية.',
+        ar: 'في شركة د. سليمان  بن صالح المقحم للمحاماة والاستشارات القانونية نعتز بخبرة قانونية تمتد لأكثر من عشرين  عامًا، وبهيكل تنظيمي يضم أقسامًا متخصصة تغطي مختلف فروع القانون. نتميز بالدقة في الإجراءات، وسرعة إنجاز المعاملات، والحرص الدائم على حماية حقوق العملاء وتقديم ما يخدم مصالحهم بأعلى مستويات الأمان والسرية.',
         en: 'At Dr. Sulaiman Bin Saleh Al-Muqham Law Firm and Legal Consultations, we take pride in our legal experience spanning more than twenty years, and in an organizational structure that includes specialized departments covering various branches of law. We are distinguished by the accuracy of procedures, the speed of completing transactions, and the constant commitment to protecting clients` rights and providing services that serve their interests with the highest levels of security and confidentiality.',
       },
       features: [
         {
-          ar: 'خبرة قانونية تتجاوز عشرون عامًا',
+          ar: 'خبرة قانونية تتجاوز عشرين عامًا',
           en: 'Legal expertise exceeding twenty years',
         },
         {
