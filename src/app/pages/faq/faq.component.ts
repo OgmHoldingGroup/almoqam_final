@@ -38,10 +38,10 @@ export class FaqComponent implements OnInit, OnDestroy {
       },
       answers: {
         ar: [
-          'المحامي مرخص للمرافعة أمام المحاكم وتمثيل العملاء، بينما المستشار القانوني يقدم آراء قانونية وصياغة عقود دون تمثيل أمام القضاء. بعض القضايا تتطلب محامياً فقط.',
+          'المحامي يقوم بالمرافعة أمام المحاكم وتمثيل العملاء، بينما المستشار القانوني يقدم آراء قانونية وصياغة عقود دون تمثيل أمام القضاء. بعض القضايا تتطلب محامياً فقط.',
         ],
         en: [
-          'A lawyer is licensed to represent clients and plead before courts, while a legal consultant provides legal opinions and drafts contracts without representing clients in court. Some cases require a lawyer specifically.',
+          'A lawyer pleads cases in court and represents clients, while a legal advisor provides legal opinions and drafts contracts without representing clients in court. Some cases require only a lawyer.',
         ],
       },
       open: false,
