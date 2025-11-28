@@ -69,4 +69,11 @@ export const routes: Routes = [
       ),
     title: 'Blog Details',
   },
+  {
+    path: 'create-blog',
+    loadComponent: () =>
+      import('./backOffice/blog/blog-form/blog-form.component').then(
+        (m) => m.BlogFormComponent
+      ),
+  },
 ];

@@ -2,11 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-// body {
-//   background: url("../public/imgs/male-lawyer.webp");
-//   background-repeat: no-repeat;
-//   background-size: contain;
-// }
+// Custom Toastr Styles to match blog theme
+.toast-container {
+  .ngx-toastr {
+    background-color: #1a3d3d;
+    border: 2px solid #d4af6a;
+    box-shadow: 0 10px 30px rgba(212, 175, 106, 0.2);
+
+    .toast-title {
+      color: #d4af6a;
+      font-weight: bold;
+    }
+
+    .toast-message {
+      color: #e5e7eb;
+    }
+
+    .toast-progress {
+      background-color: #d4af6a;
+    }
+  }
+
+  .toast-success {
+    border-color: #10b981;
+
+    .toast-progress {
+      background-color: #10b981;
+    }
+  }
+
+  .toast-error {
+    border-color: #ef4444;
+
+    .toast-progress {
+      background-color: #ef4444;
+    }
+  }
+
+  .toast-warning {
+    border-color: #f59e0b;
+
+    .toast-progress {
+      background-color: #f59e0b;
+    }
+  }
+
+  .toast-info {
+    border-color: #3b82f6;
+
+    .toast-progress {
+      background-color: #3b82f6;
+    }
+  }
+}
 body {
   background: url("../public/imgs/male-lawyer.webp") center center no-repeat;
   background-size: cover; /* تغطي الشاشة بالكامل */
